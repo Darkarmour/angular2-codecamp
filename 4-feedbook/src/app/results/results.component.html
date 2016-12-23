@@ -1,3 +1,14 @@
-<p>
-  results works!
-</p>
+<div>
+  <h3>How well were you able to understand today's session?</h3>
+  <p><span class="label label-success">{{allCount}}</span>&nbsp;&nbsp; Almost all of it :) </p>
+  <p><span class="label label-info">{{okokCount}}</span>&nbsp;&nbsp; 50 - 50 </p>
+  <p><span class="label label-warning">{{noneCount}}</span>&nbsp;&nbsp; Was tough to follow :( </p>
+  <div class="well">
+    <h4>Comments</h4>
+    <p *ngIf="comments.length === 0">No comments available</p>
+    <ul>
+      <li *ngFor="let comment of comments">{{comment}}</li>
+    </ul>
+  </div>
+  <button class="btn btn-sm btn-primary" type="submit" (click)="getFeedback()">Refresh</button>
+</div>

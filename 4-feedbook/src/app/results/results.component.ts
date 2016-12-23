@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
+  allCount:number = 0;
+  noneCount:number = 0;
+  okokCount:number = 0;
+  comments:Array<string> = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.getFeedback();
+  }
+
+  getFeedback() {
+
   }
 
 }
