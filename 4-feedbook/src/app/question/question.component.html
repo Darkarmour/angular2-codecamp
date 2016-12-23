@@ -1,0 +1,28 @@
+<form>
+  <h3>How well were you able to understand today's session?</h3>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="all" (click)="makeChoice('all')">
+      Almost all of it :)
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="half" (click)="makeChoice('half')">
+      50 - 50
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios3" value="none" (click)="makeChoice('none')">
+      Was tough to follow :(
+    </label>
+  </div>
+  <br/>
+  <div class="form-group">
+    <label for="comments">Any other feedback</label>
+    <input type="text" class="form-control" id="comments" name="comments" placeholder="Type your comments" [(ngModel)]="feedback">
+  </div>
+  <button class="btn btn-primary" type="submit" (click)="submitFeedback()" [disabled]="isFormSubmitted || !choice">Submit</button>
+</form>
+
