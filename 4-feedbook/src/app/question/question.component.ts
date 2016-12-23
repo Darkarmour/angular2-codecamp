@@ -22,9 +22,11 @@ export class QuestionComponent implements OnInit {
   }
 
   submitFeedback() {
-    console.log('Submitting: ' + this.choice + '|' + this.feedback)
-    this.myData.pushFeedback(this.choice, this.feedback);
+    console.log('Submitting: ' + this.choice + '|' + this.feedback);
     this.isFormSubmitted = true;
+    this.myData.pushFeedback(this.choice, this.feedback).subscribe((response)=>{
+      console.log('Data pushed');
+    });
   }
 
 }
